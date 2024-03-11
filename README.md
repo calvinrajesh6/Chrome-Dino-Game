@@ -14,3 +14,5 @@ High Score Tracking: Implement a high score system to challenge players to beat 
 Enhanced Visuals and Sound Effects: Add visual effects and sound effects to make the game more immersive and entertaining.
 
 Responsive Design: Ensure that the game is responsive and works well on different screen sizes and devices.
+
+![Uploading Screenshot 2024-03-11 183612.png…]()
