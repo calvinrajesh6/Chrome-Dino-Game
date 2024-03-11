@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: red;
+    overflow: hidden;
+}
+.gameover{
+    visibility: hidden;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 45px;
+    /* top: 50%;
+    left: 50%; */
+    /* margin-top: 15%; */
+    padding-top: 20%;
+    padding-left: 40%;
+    /* margin-left: 50%; */
+}
+.gamesetup{
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100%;
+    height: 100vh;
+}
+.char{
+    background-image: url(car.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    margin-top: 75%;
+    bottom: -15px;
+}
+.obst{
+    width: 150px;
+    height: 135px;
+    background-image: url(carobst.png);
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 44vw;
+}
+.animatecar{
+    animation: car 0.6s linear;
+}
+
+.obstanim{
+    animation: obstanim 2s infinite linear;
+}
+
+@keyframes car{
+    0%{
+        bottom: 0;
+    }
+    25%{
+        bottom:150px;
+    }
+    50%{
+        bottom: 250px;
+    }
+    75%{
+        bottom:150px;
+    }
+    /* 90%{
+        bottom: 100px;
+    } */
+    100%{
+        bottom:0;
+    }
+}
+
+@keyframes obstanim {
+    0%{
+        left:100vw;
+    }
+    100%{
+        left:-10vw;
+    }
+    
+}
+#score {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    padding-left: 6%;
+    position: fixed;
+    top: 50px; 
+}
