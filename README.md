@@ -15,4 +15,5 @@ Enhanced Visuals and Sound Effects: Add visual effects and sound effects to make
 
 Responsive Design: Ensure that the game is responsive and works well on different screen sizes and devices.
 
-![Uploading Screenshot 2024-03-11 183612.png…]()
+![Screenshot 2024-03-11 183612](https://github.com/calvinrajesh6/Chrome-Dino-Game/assets/145462164/e202961b-9352-45ca-a5a9-27abdbe1ca4b)
+
