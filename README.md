@@ -6,9 +6,9 @@ Customized Character and Background: Replaced the default dinosaur character and
 
 Simple Gameplay Mechanics: Implemented basic gameplay mechanics such as jumping and avoiding obstacles to keep the game simple and intuitive.
 
-Under Development: The game is still under development, with plans to add new features and improve existing ones for a more engaging experience.
+Under Development:
+The game is still under development, with plans to add new features and improve existing ones for a more engaging experience.
 
-Roadmap
 High Score Tracking: Implement a high score system to challenge players to beat their previous records.
 
 Enhanced Visuals and Sound Effects: Add visual effects and sound effects to make the game more immersive and entertaining.
