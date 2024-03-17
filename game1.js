@@ -1,19 +1,27 @@
-document.onkeydown = function(e){
-    console.log("console"+ e.keyCode);
-    if(e.keyCode==38 && !car.classList.contains('animatecar')){
+document.addEventListener("DOMContentLoaded", function() {
+    const myImage = document.getElementById('myImage');
+    myImage.addEventListener('click', function() {
+        restartGame();
+    });
+
+document.onkeydown = function(e) {
+    if (e.keyCode == 38 && !car.classList.contains('animatecar')) {
         car = document.querySelector('.char');
         car.classList.add('animatecar');
-        setTimeout(()=>{
-            car.classList.remove('animatecar')
-        },700);
+        setTimeout(() => {
+            car.classList.remove('animatecar');
+        }, 700);
     }
+};
+let highscore = localStorage.getItem("highscore");
+if (highscore === null) {
+    localStorage.setItem("highscore", 0);
 }
-
-let score = 0; // Declare the score variable outside the setInterval function to persist its value
-
+let score = 0;
 setInterval(() => {
     car = document.querySelector('.char');
-    gameover = document.querySelector('.gameover');
+    gameover = document.getElementById('gameover'); // Select by ID
+    restart = document.getElementById('myImage'); // Select by ID
     obstacle = document.querySelector('.obst');
 
     cx = parseInt(window.getComputedStyle(car).getPropertyValue('left'));
@@ -22,17 +30,33 @@ setInterval(() => {
     ox = parseInt(window.getComputedStyle(obstacle).getPropertyValue('left'));
     oy = parseInt(window.getComputedStyle(obstacle).getPropertyValue('bottom'));
 
-    console.log(cx, ox, cy, oy);
-    
     if (ox < 80 && ox > 0 && cy < 160) {
+        if (score > localStorage.getItem("highscore")) {
+            localStorage.setItem("highscore", parseInt(score));
+        }
+        score=0;
         gameover.style.visibility = 'visible';
+        restart.style.visibility = 'visible';
         obstacle.classList.remove('obstanim');
-        alert("Game Over!");
-    } else if(gameover.style.visibility != 'visible') {
-        score += 0.09; // Update the score value
+    } else if (gameover.style.visibility != 'visible') {
+        score += 0.09;
         let scoreElement = document.getElementById('score');
-        scoreElement.textContent = 'Your Score: ' + parseInt(score); // Update the score displayed in the HTML
+        scoreElement.textContent = 'Your Score: ' + parseInt(score);
     }
+    let highscoreelem = document.getElementById('highscore');
+    highscoreelem.textContent = 'High Score: ' + localStorage.getItem("highscore");
 }, 20);
+});
 
-set
+function restartGame() {
+    score = 0;
+    const gameover = document.getElementById('gameover');
+    gameover.style.visibility = 'hidden';
+    myImage.style.visibility = 'hidden';
+    const restartButton = document.getElementById('myImage');
+    restartButton.style.visibility = 'hidden';
+    const scoreElement = document.getElementById('score');
+    scoreElement.textContent = 'Your Score: 0';
+    obstacle = document.querySelector('.obst');
+    obstacle.classList.add('obstanim');
+}
