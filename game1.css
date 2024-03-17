@@ -1,32 +1,22 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
-    background-color: red;
+body {
+    background-color: rgb(57, 57, 152);
     overflow: hidden;
 }
-.gameover{
-    visibility: hidden;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 45px;
-    /* top: 50%;
-    left: 50%; */
-    /* margin-top: 15%; */
-    padding-top: 20%;
-    padding-left: 40%;
-    /* margin-left: 50%; */
-}
-.gamesetup{
+
+.gamesetup {
     background-image: url(background.jpg);
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
     width: 100%;
     height: 100vh;
 }
-.char{
+
+.char {
     background-image: url(car.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,58 +26,89 @@ body{
     margin-top: 75%;
     bottom: -15px;
 }
-.obst{
+
+.obst {
     width: 150px;
     height: 135px;
     background-image: url(carobst.png);
     background-size: cover;
     position: absolute;
     bottom: 0;
-    left: 44vw;
+    left: 85vw;
 }
-.animatecar{
+
+.animatecar {
     animation: car 0.6s linear;
 }
 
-.obstanim{
+.obstanim {
     animation: obstanim 2s infinite linear;
 }
 
-@keyframes car{
-    0%{
+@keyframes car {
+    0% {
         bottom: 0;
     }
-    25%{
-        bottom:150px;
+    25% {
+        bottom: 150px;
     }
-    50%{
+    50% {
         bottom: 250px;
     }
-    75%{
-        bottom:150px;
+    75% {
+        bottom: 150px;
     }
-    /* 90%{
-        bottom: 100px;
-    } */
-    100%{
-        bottom:0;
+    100% {
+        bottom: 0;
     }
 }
 
 @keyframes obstanim {
-    0%{
-        left:100vw;
+    0% {
+        left: 100vw;
     }
-    100%{
-        left:-10vw;
+    100% {
+        left: -10vw;
     }
-    
 }
+
 #score {
     color: white;
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
     padding-left: 6%;
     position: fixed;
-    top: 50px; 
+    top: 90px;
+}
+
+#highscore {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    padding-left: 6%;
+    position: fixed;
+    top: 50px;
+}
+
+#gameover {
+    visibility: hidden;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 45px;
+    position: fixed;
+    padding-top: 20%;
+    padding-left: 40%;
+}
+
+#myImage {
+    cursor: pointer;
+    visibility: hidden;
+    background-image: url(restart.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 48%;
 }
