@@ -1,51 +1,92 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background-color: rgb(57, 57, 152);
+body{
     overflow: hidden;
-}
-
-.gamesetup {
-    background-image: url(background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh;
-    width: 100%;
+    display: flex;
+    background-image: url(./images/background.jpg);
     height: 100vh;
+    padding: 5px;
+}
+.game-setup{
+    height: 100%;
+    width: 100%;
 }
 
-.char {
-    background-image: url(car.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 150px;
+.score{
+    margin-top: 50px;
+    margin-left: 25px;
+    padding: 5px;
+    display: grid;
+    font-family: 'Press Start 2P', cursive;
+    height: 5rem;
+    padding: 3px;
+    align-items: center;
+    width: 30%;
+    color: whitesmoke;
+}
+.game-end{
+    margin-top: 60px;
+    height: 200px;
+}
+.game-over{
+    visibility: hidden;
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: larger;
+    color: whitesmoke;
+}
+.restart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.game-play{
+    display: flex;
+    align-items: last baseline;
+    height: 350px;
+    width: 100%;
+}
+.chars{
     height: 150px;
-    position: absolute;
-    margin-top: 75%;
-    bottom: -15px;
 }
 
-.obst {
-    width: 150px;
-    height: 135px;
-    background-image: url(carobst.png);
-    background-size: cover;
+.car {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    animation: animatechar 0.6s linear;
+}
+
+.obstacle {
     position: absolute;
     bottom: 0;
-    left: 85vw;
-}
-
-.animatecar {
-    animation: car 0.6s linear;
-}
-
-.obstanim {
+    right: 0;
+    z-index: 0;
     animation: obstanim 2s infinite linear;
 }
 
-@keyframes car {
+
+.obstanim {
+    visibility: hidden;
+    animation: obstanim 5s infinite linear;
+}
+
+@keyframes obstanim {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes animatechar {
     0% {
         bottom: 0;
     }
@@ -63,52 +104,3 @@ body {
     }
 }
 
-@keyframes obstanim {
-    0% {
-        left: 100vw;
-    }
-    100% {
-        left: -10vw;
-    }
-}
-
-#score {
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 25px;
-    padding-left: 6%;
-    position: fixed;
-    top: 90px;
-}
-
-#highscore {
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 25px;
-    padding-left: 6%;
-    position: fixed;
-    top: 50px;
-}
-
-#gameover {
-    visibility: hidden;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 45px;
-    position: fixed;
-    padding-top: 20%;
-    padding-left: 40%;
-}
-
-#myImage {
-    cursor: pointer;
-    visibility: hidden;
-    background-image: url(restart.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 50%;
-    left: 48%;
-}
