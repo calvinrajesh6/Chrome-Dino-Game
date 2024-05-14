@@ -20,6 +20,6 @@ Localization: Implement localization features to make the game accessible to pla
 
 
 
-![Screenshot 2024-03-17 132628](https://github.com/calvinrajesh6/Chrome-Dino-Game/assets/145462164/54bb8a65-e258-4213-97d4-c708c5cfa50d)
+![image](https://github.com/calvinrajesh6/Chrome-Dino-Game/assets/145462164/4cebcdc3-50cf-4e20-8e06-62e7a343892c)
 
 
