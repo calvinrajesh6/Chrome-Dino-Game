@@ -1,0 +1,105 @@
+body{
+    overflow: hidden;
+    display: flex;
+    background-image: url(./images/background.jpg);
+    height: 100vh;
+    padding: 5px;
+}
+.game-setup{
+    height: 100%;
+    width: 100%;
+}
+
+.score{
+    margin-top: 50px;
+    margin-left: 25px;
+    padding: 5px;
+    display: grid;
+    font-family: 'Press Start 2P', cursive;
+    height: 5rem;
+    padding: 3px;
+    align-items: center;
+    width: 30%;
+    color: whitesmoke;
+}
+.game-end{
+    margin-top: 60px;
+    height: 200px;
+}
+.game-over{
+    visibility: hidden;
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: larger;
+    color: whitesmoke;
+}
+.restart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.game-play{
+    display: flex;
+    align-items: last baseline;
+    height: 350px;
+    width: 100%;
+}
+.chars{
+    height: 150px;
+}
+
+.car {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    animation: animatechar 0.6s linear;
+}
+
+.obstacle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    animation: obstanim 2s infinite linear;
+}
+
+
+.obstanim {
+    visibility: hidden;
+    animation: obstanim 5s infinite linear;
+}
+
+@keyframes obstanim {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes animatechar {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: 150px;
+    }
+    50% {
+        bottom: 250px;
+    }
+    75% {
+        bottom: 150px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
